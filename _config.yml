@@ -8,29 +8,29 @@
 #                                                 /____/
 #
 # Title of your website
-title: 'feateq.com'
+title: 'Feeling Responsive'
 
 # The slogan describes your website and is used on homepage in <title> and other important places
-slogan: 'Structural Analysis for Smarter Designs'
+slogan: 'A Flexible Theme for Jekyll'
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: '"Feateq" is an engineering blog for mechanical design, FEA, fatigue, vibration and more - offering tutorials, insights, and expert analysis for engineers.'
+description: '»Feeling Responsive« is a responsive theme for Jekyll based on the fabulous foundation framework with beautiful typography and a bright color palette.'
 
 # The credits show up in the includes/_footer.html – It would be nice of you to leave a link to Phlow or Feeling Responsive as a thank you :)
-credits: '<p> <a href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a> theme by <a href="http://phlow.de/">Phlow</a>  .</p>'
+credits: '<p>Created with &hearts; by <a href="http://phlow.de/">Phlow</a> with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> based on <a href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a>.</p>'
 
 # Main author of the website
 # See > authors.yml
-author: feateq
+author: phlow
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
-url: 'https://feateq.github.io'
-baseurl: ''#
+url: 'https://phlow.github.io'
+baseurl: '/feeling-responsive'
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
-improve_content: ''#
+improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
 
 # This URL points directly to the images directory making
 # things easier to link to images in posts and templates. It needs a slash at the end.
@@ -38,14 +38,14 @@ improve_content: ''#
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'https://feateq.github.io/images/'
+urlimg: 'https://phlow.github.io/feeling-responsive/images/'
 
 
 # Logo size is 600x80 pixels
 logo: "logo.png"
 
-# Gems
-gems:
+# Plugins
+plugins:
     - jekyll-asciidoc
     - jekyll-gist
     - jekyll-paginate
@@ -63,11 +63,11 @@ paginate_path: "blog/page:num"   # Pagination path › Important for blog page i
 
 
 # Theme works best with Kramdown (using the table of contents function)
-markdown: kramdown
-permalink: /:categories/:title/
-highlight: rouge
-excerpt_separator: "<!--more-->"
-include: ['.htaccess']
+markdown           : kramdown
+permalink          : /:categories/:title/
+highlight          : rouge
+excerpt_separator  : "<!--more-->"
+include            : ['.htaccess']
 # Exclude these files from your production _site
 exclude:
     - .sass-cache
@@ -76,6 +76,7 @@ exclude:
     - LICENSE
     - README.md
     - INSTALL.md
+    - vendor
 
 
 # The language setting is used in /includes/header.html for html-settings
@@ -111,7 +112,7 @@ defaults:
       show_meta: false 	# Hide metadata for all pages
       # sidebar:    		# Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: feateq     # Default author for pages
+      author: phlow     # Default author for pages
   -
     scope:
       path: ''
@@ -120,7 +121,7 @@ defaults:
       show_meta: true   # Show metadata for all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: feateq     # Default author for posts
+      author: phlow     # Default author for posts
 
 
 
@@ -142,10 +143,10 @@ defaults:
 #   ___/ / /___/ /_/ /
 #  /____/_____/\____/    Verify Website to Webmaster Tools
 
-google_author:             'https://plus.google.com/u/0/118311555303973066167'
-google_site_verification:  'Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ'
-bing_webmastertools_id:    '0FB4C028ABCF07C908C54386ABD2D97F'
-# alexa_verify_id:         ''
+google_site_verification        : 'Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ'
+bing_webmastertools_id          : '0FB4C028ABCF07C908C54386ABD2D97F'
+# yandex_site_verification      : ''
+# alexa_verify_id               : ''
 
 
 
@@ -156,18 +157,18 @@ bing_webmastertools_id:    '0FB4C028ABCF07C908C54386ABD2D97F'
 #   /_/    \__,_/ |___/_/\___/\____/_/ /_/____/   Favicon-Crap: Favicons, Chrome, Android & Apple Touch Buttons
 #                                                 More information » https://mathiasbynens.be/notes/touch-icons
 
-favicon-32x32:                          'favicon-32x32.png'
-touch-icon-192x192:                     'touch-icon-192x192.png'
-apple-touch-icon-180x180-precomposed:   'apple-touch-icon-180x180-precomposed.png'
-apple-touch-icon-152x152-precomposed:   'apple-touch-icon-152x152-precomposed.png'
-apple-touch-icon-144x144-precomposed:   'apple-touch-icon-144x144-precomposed.png'
-apple-touch-icon-120x120-precomposed:   'apple-touch-icon-120x120-precomposed.png'
-apple-touch-icon-114x114-precomposed:   'apple-touch-icon-114x114-precomposed.png'
-apple-touch-icon-76x76-precomposed:     'apple-touch-icon-76x76-precomposed.png'
-apple-touch-icon-72x72-precomposed:     'apple-touch-icon-72x72-precomposed.png'
-apple-touch-icon-precomposed:           'apple-touch-icon-precomposed.png'
-msapplication_tileimage:                'msapplication_tileimage.png'               # Size 144x144
-msapplication_tilecolor:                '#fabb00'
+favicon-32x32                        : 'favicon-32x32.png'
+touch-icon-192x192                   : 'touch-icon-192x192.png'
+apple-touch-icon-180x180-precomposed : 'apple-touch-icon-180x180-precomposed.png'
+apple-touch-icon-152x152-precomposed : 'apple-touch-icon-152x152-precomposed.png'
+apple-touch-icon-144x144-precomposed : 'apple-touch-icon-144x144-precomposed.png'
+apple-touch-icon-120x120-precomposed : 'apple-touch-icon-120x120-precomposed.png'
+apple-touch-icon-114x114-precomposed : 'apple-touch-icon-114x114-precomposed.png'
+apple-touch-icon-76x76-precomposed   : 'apple-touch-icon-76x76-precomposed.png'
+apple-touch-icon-72x72-precomposed   : 'apple-touch-icon-72x72-precomposed.png'
+apple-touch-icon-precomposed         : 'apple-touch-icon-precomposed.png'
+msapplication_tileimage              : 'msapplication_tileimage.png'               # Size 144x144
+msapplication_tilecolor              : '#fabb00'
 
 
 #       ______                __                __
@@ -176,9 +177,9 @@ msapplication_tilecolor:                '#fabb00'
 #    / __/ / /_/ / /__/  __/ /_/ / /_/ / /_/ / ,<
 #   /_/    \__,_/\___/\___/_.___/\____/\____/_/|_|      Facebook-Optimization › http://j.mp/fb_optimize
 
-og_image:                           'http://images.phlow.de/phlow/phlow_de-logo-512x.png'
-og_locale:                          'en_EN'
-og_type:                            'website'
+og_image                             : 'http://images.phlow.de/phlow/phlow_de-logo-512x.png'
+og_locale                            : 'en_EN'
+og_type                              : 'website'
 
 
 #      _____            _       __   __  ___         ___
@@ -191,8 +192,8 @@ og_type:                            'website'
 #
 
 socialmedia:
-    twitter: phlow
-    facebook: phlow.media
+    twitter   : phlow
+    facebook  : phlow.media
 
 
 #        ____  _
@@ -204,7 +205,7 @@ socialmedia:
 #
 # used in _includes/comments
 
-disqus_shortname: feelingresponsive
+# disqus_shortname: 
 
 
 #      _____
@@ -215,8 +216,8 @@ disqus_shortname: feelingresponsive
 #
 
 sass:
-    sass_dir: _sass
-    style: :compressed
+    sass_dir : _sass
+    style    : :compressed
 
 
 #       ___                __      __  _
@@ -228,7 +229,7 @@ sass:
 #
 # used in _includes/footer_scripts
 
-google_analytics_tracking_id: UA-60112281-1
+# google_analytics_tracking_id:
 
 
 
@@ -264,7 +265,7 @@ google_analytics_tracking_id: UA-60112281-1
 
 asciidoctor-enabled: false
 asciidoctor:
-  description: testtewtetrue
+  description: 
   attributes:
     source-highlighter: coderay
     coderay-css: style

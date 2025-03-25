@@ -22,6 +22,10 @@ header:
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 {% include _improve_content.html %}
 
+## Edit Navigation   {#edit-navigation}
+
+To customize the navigation of *Feeling Responsive*, edit the [YAML](https://jekyllrb.com/docs/datafiles/)-file `_data/navigation.yml`.
+
 ## Different Page/Posts Formats   {#formats}
 
 *Feeling Responsive* supports you with different templates for your content. These are the actual page/post formats:
@@ -36,7 +40,7 @@ If you want to show the sidebar, just enter `sidebar: left` or `sidebar: right` 
 
 
 ### Page/Post with or without metadata
-If you want to show metadata like categories, tags and date at the end of the page, just enter `show_meta: true`. It's on by default. You can change it via `_config.yml`. To turn of metadata just enter – *yes, you guessed right* – `show_meta: false`.
+You can show metadata, such as categories, tags and a date at the end of the page, just enter `show_meta: true`. By default, it's turned on. You can change it via `_config.yml`. To turn off metadata, enter `show_meta: false`.
 
 
 
@@ -60,12 +64,9 @@ use in front matter via: `layout: video`
 <small markdown="1">[Up to table of contents](#toc)</small>
 {: .text-right }
 
-
-
-
 ## Style your content with   {#styling}
 
-Feeling Responsive offers lots of possibilities to style your articles. You can style your content in different ways. There are elements like subheadlines, feature images, header images, homepage images, meta data like categories and tags and many more.
+Feeling Responsive offers different options to style your article content. There are elements like subheadlines, feature images, header images, homepage images, meta data like categories and tags and many more.
 
 
 ### subheadlines
@@ -84,6 +85,12 @@ Quotes mix it up a little bit, if you write long articles. So use quotes:
 <small markdown="1">[Up to table of contents](#toc)</small>
 {: .text-right }
 
+{% highlight html %}
+> Age is an issue of mind over matter. If you don't mind, it doesn't matter.
+<cite>Mark Twain</cite>
+<small markdown="1">[Up to table of contents](#toc)</small>
+{: .text-right }
+{% endhighlight %}
 
 ## Comments
 
@@ -94,12 +101,9 @@ By default comments are turned off. You can customize the default behaviour in `
 <small markdown="1">[Up to table of contents](#toc)</small>
 {: .text-right }
 
-
-
-
 ## Responsive Videos
 
-With foundation responsive videos are easy. [More ›](http://foundation.zurb.com/docs/components/flex_video.html)
+With foundation, responsive videos are easy. [More ›](http://foundation.zurb.com/docs/components/flex_video.html)
 
 <div class="flex-video">
         <iframe width="1280" height="720" src="//www.youtube.com/embed/WoHxoz_0ykI" frameborder="0" allowfullscreen></iframe>
@@ -118,7 +122,7 @@ With foundation responsive videos are easy. [More ›](http://foundation.zurb.co
 
 ## Images: Title, Thumbnails, Homepage   {#images}
 
-There are several types of images you can define via front matter. If you want to change the images used in the header have a look at [Style your Header]({{ site.url }}/headers/). 
+There are several types of images you can define via front matter. If you want to change the images used in the header, have a look at [Style your Header]({{ site.url }}{{ site.baseurl }}/headers/). 
 
 
 ### Title Images
@@ -148,11 +152,9 @@ image:
     homepage: header_homepage_13.jpg
 ~~~
 
-
-
 ### Captions with URL
 
-Sometimes you want to give credit to the creator of your images, maybe with a link. Especially when you use Creative Commons-images like I do for this website. Just add the following front matter and *Feeling Responsive* does the rest:
+Sometimes, you want to give credit to the creator of your images, maybe with a link. Especially when you use Creative Commons-images like I do for this website. Just add the following front matter and *Feeling Responsive* does the rest:
 
 ~~~
 image:
@@ -180,7 +182,7 @@ image:
 ## Create a Table of Contents
 {: .t60}
 
-With the Kramdown parser for Markdown you can render a table of contents for your documents. Just insert the following HTML in your post before the actual content. More information on [»Automatic ›Table of Contents‹ Generation«][1].
+With the Kramdown parser for Markdown, you can render a table of contents for your documents. Just insert the following HTML in your post before the actual content. More information on [»Automatic ›Table of Contents‹ Generation«][1].
 
 ### Bare Bones Version
 {% highlight html %}
@@ -240,28 +242,25 @@ This include creates a next/previous link to a post of the same category using t
 {% raw %} {% include next-previous-post-in-category %}{% endraw %}
 ~~~
 
-
 ### improve_content
 
-If your content is on Jekyll you can use this include to automatically generate a »Edit on GitHub Link« to give people a possibility to improve your content. Got the idea from [Ben Balters Blog](http://ben.balter.com/).
+If your content is on Jekyll, you can use this include to automatically generate a »Edit on GitHub Link« to give people a possibility to improve your content. Got the idea from [Ben Balters Blog](http://ben.balter.com/).
 
 ~~~
 {% raw %}{% include _improve_content.html %}{% endraw %}
 ~~~
 
-
 ### list-collection
 
-This include lets you loop through a collection to list all entries in that collection. If you set »published: false« in front matter of a collection page the page gots filtered out via unless. The following example loops through a collection called *wordpress*.
+This include lets you loop through a collection to list all entries in that collection. If you set »published: false« in front matter of a collection page, the page gots filtered out via unless. The following example loops through a collection called *wordpress*.
 
 ~~~
 {% raw %}{% include list-collection collection='wordpress' %}{% endraw %}
 ~~~
 
-
 ### alert – Embed an alert in your content
 
-This include lets you easily display an alert. To use the include no `.html` ending is necessary. You can use five different kinds of alerts: `warning`, `info`, `success`, `alert` and `text`. 
+This include lets you easily display an alert. To use the include, no `.html` ending is necessary. You can use five different kinds of alerts: `warning`, `info`, `success`, `alert` and `text`. 
 
 ~~~
 {% raw %}{% include alert warning='This is a warning.' %}
@@ -290,10 +289,9 @@ You can even use `<html>`-tags inside the alert. Beware: Use " and ' properly.
 <small markdown="1">[Up to table of contents](#toc)</small>
 {: .text-right }
 
-
 ## Javascript/Foundation modules
 
-*Feeling Responsive* uses the foundation framework and some of its javascript components. I reduced the modules, to decrease page load and make the theme faster.
+*Feeling Responsive* uses the foundation framework and some of its Javascript components. I reduced the modules, to decrease page load and make the theme faster.
 
 I only added one other javascript-module: [`backstretch`][3] by Scott Robbin. These modules are currently used by the theme and included in `javascript.min.js`. There is also a non-minified version, if you want to take a closer look: `javascript.js`.
 
