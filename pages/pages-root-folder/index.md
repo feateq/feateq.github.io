@@ -21,12 +21,12 @@ widget3:
   title: "Fatigue"
   url: 'https://www.feateq.com/fatigue'
   image: widget3.jpg
-  text: 'Fatigue and Life Analysis blog posts covering various life methodologies, experimental procedures, and plasticity.'
+  text: 'Fatigue and Life Analysis blog posts covering various life approaches, experimental procedures, and plasticity.'
 widget4:
   title: "Vibration"
   url: 'https://www.feateq.com/vibration'
   image: widget4.jpg
-  text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods aligned with industry norms.'
+  text: 'Mechanical Vibrations blog posts covering analytical and experimental methods aligned with industry norms.'
 #
 # Use the call for action to show a button on the frontpage
 #
