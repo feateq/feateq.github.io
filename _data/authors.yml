@@ -5,10 +5,10 @@
 # 3. Change default post/page authors in config.yml
 #
 # Resource › http://blog.sorryapp.com/blogging-with-jekyll/2014/02/06/adding-authors-to-your-jekyll-site.html
-phlow: # replace this with your info
+feateq: # replace this with your info
   name: "feateq"
-  siterole: "developer, designer, analyst"
-  uri: http://feateq.com/
+  siterole: "engineer, designer, analyst, developer"
+  uri: https://www.feateq.com/
   email: feateq@outlook.com
   twitter: ""
 # you can add more authors here
