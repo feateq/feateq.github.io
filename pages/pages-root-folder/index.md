@@ -8,22 +8,22 @@ layout: frontpage
 header:
   image_fullwidth: front_cover.jpg
 widget1:
-  title: "Structural Mechanics"
+  title: "Mechanics"
   url: 'https://www.feateq.com/mechanics'
   image: widget1.jpg
   text: 'Mechanical Design blog posts covering structural mechanics, basic equations, and core engineering concepts.'
 widget2:
-  title: "Structural Analysis"
+  title: "Analysis"
   url: 'https://www.feateq.com/analysis'
   text: 'Finite Element Analysis blog posts covering various analysis types with in-depth tutorials of real-world engineering applications.'
   image: widget2.jpg
 widget3:
-  title: "Fatigue Analysis"
+  title: "Fatigue"
   url: 'https://www.feateq.com/fatigue'
   image: widget3.jpg
   text: 'Fatigue and Life Analysis blog posts covering various life methodologies, experimental procedures, and plasticity.'
 widget4:
-  title: "Vibration Control"
+  title: "Vibration"
   url: 'https://www.feateq.com/vibration'
   image: widget4.jpg
   text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods from foundational principles to industry standards.'
