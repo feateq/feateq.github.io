@@ -1,9 +1,10 @@
 ---
 layout: page
 sidebar: left
+sidebartxt: "Exploring the theoretical foundations of Finite Element Analysis with in-depth tutorials and expert insights into real-world engineering applications."
 subheadline: "Structural Analysis"
 title: "Check Out Our Posts"
-teaser: "Exploring the theoretical foundations of Finite Element Analysis with in-depth tutorials and expert insights into real-world engineering applications."
+teaser: ""
 permalink: "/analysis/"
 image:
     thumb: gallery-example-3-thumb.jpg
