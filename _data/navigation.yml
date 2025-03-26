@@ -10,8 +10,12 @@
   url: "/analysis/"
   side: left
 
-- title: "Fatigue"
+- title: "Fatigue Analysis"
   url: "/fatigue/"
+  side: left
+
+- title: "Vibration Control"
+  url: "/vibration/"
   side: left
 
 - title: Blog
