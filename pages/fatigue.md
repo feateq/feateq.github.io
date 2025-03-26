@@ -1,18 +1,18 @@
 ---
 layout: page
 sidebar: left
-sidebartitle: "Finite Element Analysis"
-sidebartxt: "Exploring the fundamentals of Finite Element Analysis with in-depth tutorials and expert insights into real-world engineering applications.Check out our collection of blog posts about Finite Element Analysis. From basic theory to real-world applications, expert analysis tips, and step-by-step tutorials, this page serves as a comprehensive resource for engineers and analysts looking to enhance their understanding and skills. The Finite Element Method is a critical tool across industries such as aviation, automotive, defense, and energy, enabling precise simulations of structural behavior. Explore various analysis types, including linear and nonlinear static, modal, harmonic, buckling, creep, and more, to handle complex engineering challenges with confidence."
-subheadline: "Structural Analysis"
+sidebartitle: "Fatigue and Life"
+sidebartxt: "Explore the fundamentals of Fatigue Analysis with our collection of articles covering the complexities of fatigue and life analysis, providing a comprehensive exploration of various life methodologies, the experimental process, and the foundational principles of plasticity. Additionally, principles of stress and fatigue analysis methods used in commonly applied commercial software are explained, with practical examples. Emphasis is placed on the limitations of these methodologies to explain the discrepancies between theoretical predictions and real-world behavior, thereby enhancing the reliability and accuracy of engineering designs."
+subheadline: "Fatigue Analysis"
 title: "Check Out Our Posts"
-permalink: "/analysis/"
+permalink: "/fatigue/"
 image:
-    title: analysis_cover.jpg
-    caption: stock.adobe.com
-    caption_url: https://stock.adobe.com
+    title: fatigue_cover.jpg
+    caption: unsplash.com
+    caption_url: https://unsplash.com/
 ---
 <ul>
-    {% for post in site.tags.analysis %}
+    {% for post in site.tags.fatigue %}
     <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
