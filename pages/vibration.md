@@ -1,18 +1,18 @@
 ---
 layout: page
 sidebar: left
-sidebartitle: "Finite Element Analysis"
-sidebartxt: "Exploring the fundamentals of Finite Element Analysis with in-depth tutorials and expert insights into real-world engineering applications.Check out our collection of blog posts about Finite Element Analysis. From basic theory to real-world applications, expert analysis tips, and step-by-step tutorials, this page serves as a comprehensive resource for engineers and analysts looking to enhance their understanding and skills. The Finite Element Method is a critical tool across industries such as aviation, automotive, defense, and energy, enabling precise simulations of structural behavior. Explore various analysis types, including linear and nonlinear static, modal, harmonic, buckling, creep, and more, to handle complex engineering challenges with confidence."
-subheadline: "Structural Analysis"
+sidebartitle: "Mechanical Vibrations"
+sidebartxt: "Explore the fundamentals of Mechanical Vibration with our collection of articles covering analytical and experimental vibration methods. The content spans from foundational principles and mathematical concepts to industry standards and real-world applications. High cycle fatigue of materials and random vibration analysis are also addressed, providing a comprehensive understanding of their impact in vibration safety. Additionally, key vibration terminology commonly used in the engineering world is detailed, offering essential insights for both conceptual understanding and practical implementation, particularly in industries such as aerospace, defence and turbomachinery."
+subheadline: "Vibration Control"
 title: "Check Out Our Posts"
-permalink: "/analysis/"
+permalink: "/vibration/"
 image:
-    title: analysis_cover.jpg
-    caption: stock.adobe.com
-    caption_url: https://stock.adobe.com
+    title: vibration_cover.jpg
+    caption: unsplash.com
+    caption_url: https://unsplash.com/
 ---
 <ul>
-    {% for post in site.tags.analysis %}
+    {% for post in site.tags.vibration %}
     <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
