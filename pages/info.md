@@ -5,7 +5,7 @@ subheadline: "Analysis Solutions for Smarter Mechanical Designs"
 teaser: "Feateq is an engineering blog for mechanical design, FEA, fatigue, vibration and more - offering tutorials, insights, and expert analysis for engineers..."
 permalink: "/info/"
 header:
-    image_fullwidth: "header_drop.jpg"
+    image_fullwidth: "info_cover.jpg"
 ---
 ...and learn at the same time.
 
