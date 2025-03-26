@@ -21,7 +21,7 @@ widget3:
   title: "Fatigue"
   url: 'https://www.feateq.com/fatigue'
   image: widget3.jpg
-  text: 'Fatigue and Life Analysis blog posts covering various life approaches, experimental procedures, and plasticity.'
+  text: 'Fatigue and Life Analysis blog posts covering different life approaches, experimental procedures, and plasticity.'
 widget4:
   title: "Vibration"
   url: 'https://www.feateq.com/vibration'
