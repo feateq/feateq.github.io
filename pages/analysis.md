@@ -7,9 +7,9 @@ subheadline: "Structural Analysis"
 title: "Check Out Our Posts"
 permalink: "/analysis/"
 image:
-    title: analysis_cover.jpeg
-	caption: stock.adobe.com
-    caption_url: https://stock.adobe.com/
+    title: analysis_cover.jpg
+    caption: stock.adobe.com
+    caption_url: https://stock.adobe.com
 ---
 <ul>
     {% for post in site.tags.analysis %}
