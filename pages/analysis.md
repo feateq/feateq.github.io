@@ -7,9 +7,8 @@ subheadline: "Structural Analysis"
 title: "Check Out Our Posts"
 permalink: "/analysis/"
 image:
-    thumb: gallery-example-3-thumb.jpg
-    title: gallery-example-3.jpg
-    caption_url: http://unsplash.com
+    title: analysis_cover.jpeg
+    caption_url: https://stock.adobe.com/
 ---
 <ul>
     {% for post in site.tags.analysis %}
