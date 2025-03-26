@@ -8,6 +8,7 @@ title: "Check Out Our Posts"
 permalink: "/analysis/"
 image:
     title: analysis_cover.jpeg
+	caption: stock.adobe.com
     caption_url: https://stock.adobe.com/
 ---
 <ul>
