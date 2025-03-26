@@ -26,7 +26,7 @@ widget4:
   title: "Vibration"
   url: 'https://www.feateq.com/vibration'
   image: widget4.jpg
-  text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods based on industry standards.'
+  text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods aligned with industry norms.'
 #
 # Use the call for action to show a button on the frontpage
 #
