@@ -39,7 +39,7 @@ widget4:
 #
 callforaction:
   url: https://www.feateq.com/contact
-  text: Submit Your Comments›
+  text: ‹Submit Your Comments›
   style: alert
 permalink: /index.html
 #
