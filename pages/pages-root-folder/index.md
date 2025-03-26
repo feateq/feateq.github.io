@@ -38,10 +38,10 @@ widget4:
 # To change colors see sass/_01_settings_colors.scss
 #
 callforaction:
-  url: https://www.feateq.com
+  url: https://www.feateq.com/contact
   text: Submit Your Comments›
   style: alert
-permalink: /contact/
+permalink: /index.html
 #
 # This is a nasty hack to make the navigation highlight
 # this page as active in the topbar navigation
