@@ -15,7 +15,7 @@ widget1:
 widget2:
   title: "Analysis"
   url: 'https://www.feateq.com/analysis'
-  text: 'Finite Element Analysis blog posts covering various analysis types with in-depth tutorials of real-world engineering applications.'
+  text: 'Finite Element Analysis blog posts covering various analysis types with tutorials of real engineering applications.'
   image: widget2.jpg
 widget3:
   title: "Fatigue"
@@ -26,7 +26,7 @@ widget4:
   title: "Vibration"
   url: 'https://www.feateq.com/vibration'
   image: widget4.jpg
-  text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods from foundational principles to industry standards.'
+  text: 'Mechanical Vibrations blog posts covering analytical and experimental vibration methods based on industry standards.'
 #
 # Use the call for action to show a button on the frontpage
 #
