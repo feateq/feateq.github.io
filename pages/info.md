@@ -6,6 +6,8 @@ teaser: "Feateq is an engineering blog for mechanical design, FEA, fatigue, vibr
 permalink: "/info/"
 header:
     image_fullwidth: "info_cover.jpg"
+	caption: unsplash.com
+    caption_url: https://unsplash.com/
 ---
 ...and learn at the same time.
 
