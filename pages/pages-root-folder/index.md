@@ -11,7 +11,7 @@ widget1:
   title: "Mechanics"
   url: 'https://www.feateq.com/mechanics'
   image: widget1.jpg
-  text: 'Mechanical Design blog posts covering structural mechanics, basic equations, and core engineering concepts.'
+  text: 'Mechanical Design blog posts covering solid mechanic principles, basic equations, and core engineering concepts.'
 widget2:
   title: "Analysis"
   url: 'https://www.feateq.com/analysis'
