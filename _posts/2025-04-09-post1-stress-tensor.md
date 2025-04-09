@@ -32,9 +32,54 @@ It is possible to select a plane where the traction vector is parallel to the su
 ![blog_post_images](/post_imgs/post1_img5.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 This is an eigenvalue problem. Since the stress tensor is real and symmetric, it has real eigenvalues and orthogonal eigenvectors. To express the solution, two matrices can be defined:
-* [V]: a matrix whose columns are the eigenvectors
-* [Λ]: a diagonal matrix containing the eigenvalues
++ [V]: a matrix whose columns are the eigenvectors
++ [Λ]: a diagonal matrix containing the eigenvalues
 The eigenvectors indicate the principal directions, while the eigenvalues represent the principal stresses. In the principal basis, the stress tensor is diagonal and represents pure normal stresses without any shear components.
 
 ![blog_post_images](/post_imgs/post1_img6.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
+Orthogonality of Eigenvectors
+---------------------
+It is worth emphasizing the orthogonality of the eigenvectors of real-symmetric matrices, as this property is fundamental to many other applications, such as modal analysis and mode superposition. In fact, finite element analysts frequently work with real-symmetric mass and stiffness matrices that exhibit the same behavior.
+
+Consider two eigenvectors of the stress tensor:
+
+![blog_post_images](/post_imgs/post1_img7.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Taking the dot product of the second eigenvector with the first equation:
+
+![blog_post_images](/post_imgs/post1_img8.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Since [σ] is symmetric:
+
+![blog_post_images](/post_imgs/post1_img9.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Substituting from the second eigenvalue equation:
+
+![blog_post_images](/post_imgs/post1_img10.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Since eigenvalues are distinct, the only solution is:
+
+![blog_post_images](/post_imgs/post1_img11.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+This shows that the two eigenvectors must be orthogonal. In matrix form, this orthogonality condition is written as:
+
+![blog_post_images](/post_imgs/post1_img12.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+This also implies that the transpose of the orthogonal matrix is equal to its inverse:
+
+![blog_post_images](/post_imgs/post1_img13.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+All eigenvalues and eigenvectors can be expressed simultaneously in the following matrix equation:
+
+![blog_post_images](/post_imgs/post1_img14.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Which also requires:
+
+![blog_post_images](/post_imgs/post1_img15.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+This equation represents the transformation of the stress tensor into the eigenbasis (principal basis). Conversely, transforming back to the standard coordinate basis:
+
+Eigenvector matrix [V] acts as a transformation matrix from eigenbasis to standard coordinate basis, while transpose[V] performs the reverse transformation. This eigenbasis transformation is a special case of the more general coordinate basis transformation. Mode superposition is an application of this same concept to multidimensional dynamic systems.
+
+![blog_post_images](/post_imgs/post1_img16.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
