@@ -20,6 +20,7 @@ tags:
 
 
 <div class="medium-8 medium-pull-4 columns" markdown="1">
+
 Stress Vector
 ---------------------
 Most readers are already familiar with the well-known cube that illustrates the stress components. However, this cube is not a physical block of material extracted from the body; rather, it is a convenient representation of the stress field at a point, depicted using three mutually perpendicular planes defined by the base vectors (e1, e2, e3).
