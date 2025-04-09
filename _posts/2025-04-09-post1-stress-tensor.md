@@ -15,9 +15,7 @@ Most readers are already familiar with the well-known cube that illustrates the 
 
 Due to static equilibrium conditions and the absence of body torques, the stress tensor is both real-symmetric. This symmetry ensures that the moments acting on an infinitesimal element are balanced.
 
-$$
-\sigma_{ij} = \sigma_{ji}
-$$
+![blog_post_images](/post_imgs/post1_img2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 According to Cauchy's stress theorem, if the stress tensor field at a point is known, its stress vector in a plane defined by normal vector {n} can be calculated with the projection of tensor field on the plane.
 
@@ -25,9 +23,7 @@ According to Cauchy's stress theorem, if the stress tensor field at a point is k
 
 The stress vector on a cross-section is referred to as the traction vector, {T}. It is defined as the force vector acting on a cross-section divided by the area. The traction vector generally has both normal and tangential components with respect to the plane; in other words, it is not necessarily aligned with the normal vector.
 
-$$
-\mathbf{T} = [\boldsymbol{\sigma}]^T \mathbf{n} = [\boldsymbol{\sigma}] \mathbf{n}
-$$
+![blog_post_images](/post_imgs/post1_img4.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 Principal Stress
 ---------------------
