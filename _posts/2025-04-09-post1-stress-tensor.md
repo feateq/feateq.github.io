@@ -1,8 +1,11 @@
 ---
-layout: page
+layout: page-fullwidth
 title:  "Stress Tensor"
 subheadline:  "Cauchy's Stress Theorem"
 teaser: "The stress tensor and its properties provide an ideal starting point for an engineering blog focused on solid mechanics. A solid understanding of this tensor facilitates comprehension of concepts such as coordinate transformation, principal stress, and yield criteria."
+image:
+    thumb:  post1_img3.jpg
+    homepage: post1_img3.jpg
 tags:
     - mechanics
     - analysis
