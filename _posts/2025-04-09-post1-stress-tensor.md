@@ -26,6 +26,7 @@ Stress Vector
 Most readers are already familiar with the well-known cube that illustrates the stress components. However, this cube is not a physical block of material extracted from the body; rather, it is a convenient representation of the stress field at a point, depicted using three mutually perpendicular planes defined by the base vectors (e1, e2, e3).
 
 ![blog_post_images](/post_imgs/post1_img1.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}
 
 Due to static equilibrium conditions and the absence of body torques, the stress tensor is both real-symmetric. This symmetry ensures that the moments acting on an infinitesimal element are balanced.
 
@@ -34,6 +35,7 @@ Due to static equilibrium conditions and the absence of body torques, the stress
 According to Cauchy's stress theorem, if the stress tensor field at a point is known, its stress vector in a plane defined by normal vector {n} can be calculated with the projection of tensor field on the plane.
 
 ![blog_post_images](/post_imgs/post1_img3.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}
 
 The stress vector on a cross-section is referred to as the traction vector, {T}. It is defined as the force vector acting on a cross-section divided by the area. The traction vector generally has both normal and tangential components with respect to the plane; in other words, it is not necessarily aligned with the normal vector.
 
@@ -46,8 +48,8 @@ It is possible to select a plane where the traction vector is parallel to the su
 ![blog_post_images](/post_imgs/post1_img5.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 This is an eigenvalue problem. Since the stress tensor is real and symmetric, it has real eigenvalues and orthogonal eigenvectors. To express the solution, two matrices can be defined:
-+ V: a matrix whose columns are the eigenvectors
-+ Λ: a diagonal matrix containing the eigenvalues
++ \[V\]: a matrix whose columns are the eigenvectors
++ \[Λ\]: a diagonal matrix containing the eigenvalues
 
 The eigenvectors indicate the principal directions, while the eigenvalues represent the principal stresses. In the principal basis, the stress tensor is diagonal and represents pure normal stresses without any shear components.
 
@@ -65,7 +67,7 @@ Taking the dot product of the second eigenvector with the first equation:
 
 ![blog_post_images](/post_imgs/post1_img8.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-Since [σ] is symmetric:
+Since \[σ\] is symmetric:
 
 ![blog_post_images](/post_imgs/post1_img9.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -95,17 +97,17 @@ Which also requires:
 
 This equation represents the transformation of the stress tensor into the eigenbasis (principal basis). Conversely, transforming back to the standard coordinate basis:
 
-Eigenvector matrix V acts as a transformation matrix from eigenbasis to standard coordinate basis, while its transpose performs the reverse transformation. This eigenbasis transformation is a special case of the more general coordinate basis transformation. Mode superposition is an application of this same concept to multidimensional dynamic systems.
-
 ![blog_post_images](/post_imgs/post1_img16.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+
+Eigenvector matrix \[V\] acts as a transformation matrix from eigenbasis to standard coordinate basis, while its transpose performs the reverse transformation. This eigenbasis transformation is a special case of the more general coordinate basis transformation. Mode superposition is an application of this same concept to multidimensional dynamic systems.
 
 Coordinate Transformation
 ---------------------
-Let us assume that the standard basis vectors are {e1, e2, e3} and we want to express vectors and tensors in another coordinate system defined by {e1’, e2’, e3’}. The rotation matrix between these two bases is defined by using directional cosines between unit vectors as shown in Q. Alternatively, a sequence of rotations about yaw, pitch, and roll axes can also be used to define a general 3D rotation. Rotation matrices are orthogonal.
+Let us assume that the standard basis vectors are {e1, e2, e3} and we want to express vectors and tensors in another coordinate system defined by {e1’, e2’, e3’}. The rotation matrix between these two bases is defined by using directional cosines between unit vectors as shown in \[Q\]. Alternatively, a sequence of rotations about yaw, pitch, and roll axes can also be used to define a general 3D rotation. Rotation matrices are orthogonal.
 
 ![blog_post_images](/post_imgs/post1_img17.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-In Cartesian coordinates, the standard basis E is simply the identity matrix:
+In Cartesian coordinates, the standard basis \[E\] is simply the identity matrix:
 
 ![blog_post_images](/post_imgs/post1_img18.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -153,7 +155,7 @@ The deviatoric stress tensor is obtained by removing the mean hydrostatic stress
 
 ![blog_post_images](/post_imgs/post1_img27.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-The invariants of the deviatoric stress tensor S are:
+The invariants of the deviatoric stress tensor \[S\] are:
 
 ![blog_post_images](/post_imgs/post1_img28.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -192,6 +194,7 @@ When the same magnitude of stress is applied in both conditions, the shear speci
 This indicates that a material can carry nearly half the shear load compared to the tension load before yielding. A comparison of material tests using different yield criteria is shown in the graph below.
 
 ![blog_post_images](/post_imgs/post1_img36.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+*Ref: Dowling, N.E., Mechanical Behavior of Materials*{: .right}
 
 Example Calculations
 ---------------------
