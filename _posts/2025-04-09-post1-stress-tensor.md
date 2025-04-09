@@ -27,7 +27,7 @@ Most readers are already familiar with the well-known cube that illustrates the 
 
 ![blog_post_images](/post_imgs/post1_img1.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}
+*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}<br> 
 
 Due to static equilibrium conditions and the absence of body torques, the stress tensor is both real-symmetric. This symmetry ensures that the moments acting on an infinitesimal element are balanced.
 
@@ -37,7 +37,7 @@ According to Cauchy's stress theorem, if the stress tensor field at a point is k
 
 ![blog_post_images](/post_imgs/post1_img3.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}
+*Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}<br> 
 
 The stress vector on a cross-section is referred to as the traction vector, {T}. It is defined as the force vector acting on a cross-section divided by the area. The traction vector generally has both normal and tangential components with respect to the plane; in other words, it is not necessarily aligned with the normal vector.
 
@@ -196,7 +196,7 @@ When the same magnitude of stress is applied in both conditions, the shear speci
 This indicates that a material can carry nearly half the shear load compared to the tension load before yielding. A comparison of material tests using different yield criteria is shown in the graph below.
 
 ![blog_post_images](/post_imgs/post1_img36.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-*Ref: Dowling, N.E., Mechanical Behavior of Materials*{: .right}
+*Ref: Dowling, N.E., Mechanical Behavior of Materials*{: .right}<br> 
 
 Example Calculations
 ---------------------
