@@ -32,8 +32,8 @@ It is possible to select a plane where the traction vector is parallel to the su
 ![blog_post_images](/post_imgs/post1_img5.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 This is an eigenvalue problem. Since the stress tensor is real and symmetric, it has real eigenvalues and orthogonal eigenvectors. To express the solution, two matrices can be defined:
-+ [V]: a matrix whose columns are the eigenvectors
-+ [Λ]: a diagonal matrix containing the eigenvalues
++ V: a matrix whose columns are the eigenvectors
++ Λ: a diagonal matrix containing the eigenvalues
 The eigenvectors indicate the principal directions, while the eigenvalues represent the principal stresses. In the principal basis, the stress tensor is diagonal and represents pure normal stresses without any shear components.
 
 ![blog_post_images](/post_imgs/post1_img6.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
@@ -80,6 +80,6 @@ Which also requires:
 
 This equation represents the transformation of the stress tensor into the eigenbasis (principal basis). Conversely, transforming back to the standard coordinate basis:
 
-Eigenvector matrix [V] acts as a transformation matrix from eigenbasis to standard coordinate basis, while transpose[V] performs the reverse transformation. This eigenbasis transformation is a special case of the more general coordinate basis transformation. Mode superposition is an application of this same concept to multidimensional dynamic systems.
+Eigenvector matrix V acts as a transformation matrix from eigenbasis to standard coordinate basis, while its transpose performs the reverse transformation. This eigenbasis transformation is a special case of the more general coordinate basis transformation. Mode superposition is an application of this same concept to multidimensional dynamic systems.
 
 ![blog_post_images](/post_imgs/post1_img16.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
