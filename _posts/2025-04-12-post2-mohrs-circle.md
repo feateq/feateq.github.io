@@ -3,6 +3,7 @@ layout: page-fullwidth
 title:  "Mohr's Circle"
 subheadline:  "Maximum Shear Stress"
 teaser: "Mohr’s circle provides a two-dimensional graphical representation of the transformation laws for the Cauchy stress tensor. It allows the graphical determination of the stress components acting on a rotated plane passing through the same point."
+description: "solid mechanics, stress tensor, coordinate transformation, principal stress, mohr's circle"
 image:
     thumb:  post2_thumb.png
 tags:
