@@ -32,8 +32,8 @@ $$
 $$
 
 <details>
-  <summary><b>Code: Principal Stress Directions</b></summary>
-```Matlab
+  <summary><b>Code: Principal Stress Directions</b></summary><br>
+<pre><code>
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
 % stress tensor. It calculates the normal and shear stresses on a plane.
@@ -80,7 +80,7 @@ text(1.2*V(1,2),1.2*V(2,2),1.2*V(3,2),...
 text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
     'P3','FontSize',14,'color', 'm','FontWeight', 'bold')
 %--------------------------------------------------------------------------
-```
+</code></pre>
 </details>
 
 The traction vector acting on a plane defined by the normal vector {n} can be calculated as follows:
@@ -111,7 +111,7 @@ $$
 
 <details>
   <summary><b>Code: Plot Mohr's Circle</b></summary>
-```Matlab
+<pre><code>
 %plot mohrs circle---------------------------------------------------------
 p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
     0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(2,2)));
@@ -143,7 +143,7 @@ plot([Prin_Stress(3,3) Prin_Stress(3,3)],[-0.55*abs(Prin_Stress(1,1)-...
 text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
     'S_s','FontSize',14)
 %--------------------------------------------------------------------------
-```
+</code></pre>
 </details>
 
 
@@ -153,7 +153,7 @@ The following code can be used to enhance the visualization of the stress tensor
 
 <details>
   <summary><b>Code: Plot Unit Cube and Cross Section Plane</b></summary>
-```Matlab
+<pre><code>
 %draw a unit cube centered at coordinate origin----------------------------
 %this part of the code is only for visualization---------------------------
 cube_corners= [...
@@ -214,20 +214,20 @@ else
 end
 surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 %--------------------------------------------------------------------------
-```
+</code></pre>
 </details>
 
 The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
 
 <details>
   <summary><b>Code: Update Inputs</b></summary>
-```Matlab
+<pre><code>
 %INPUTS....................................................................
 %S=[100 50 30; 50 150 40; 30 40 120];           %tensor in standard basis
 S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
 n=[1 0 1]';
 %..........................................................................
-```
+</code></pre>
 </details>
 
 $$
@@ -246,13 +246,13 @@ You are encouraged to modify the normal direction inputs and re-run the code to 
 
 <details>
   <summary><b>Code: Update Inputs</b></summary>
-```Matlab
+<pre><code>
 %INPUTS....................................................................
 S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
 %S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
 n=[0.4718 0.7334 0.4894]';
 %..........................................................................
-```
+</code></pre>
 </details>
 
 The output of the code would be:
