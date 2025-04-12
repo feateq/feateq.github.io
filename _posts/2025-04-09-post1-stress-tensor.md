@@ -169,9 +169,9 @@ Unit vectors of transformed basis can be arranged in matrix form as:
 
 $$
 [E'] = \begin{bmatrix}
-e_1'x & e_2'x & e_3'x \\
-e_1'y & e_2'y & e_3'y \\
-e_1'z & e_2'z & e_3'z
+(e_1)'_x & (e_2)'_x & (e_3)'_x \\
+(e_1)'_y & (e_2)'_y & (e_3)'_y \\
+(e_1)'_z & (e_2)'_z & (e_3)'_z
 \end{bmatrix}
 $$
 
@@ -179,9 +179,9 @@ Transformation matrix can also be expressed using these unit vectors:
 
 $$
 [Q] = [E']^T = \begin{bmatrix}
-e_1'x & e_1'y & e_1'z \\
-e_2'x & e_2'y & e_2'z \\
-e_3'x & e_3'y & e_3'z
+(e_1)'_x & (e_1)'_y & (e_1)'_z \\
+(e_2)'_x & (e_2)'_y & (e_2)'_z \\
+(e_3)'_x & (e_3)'_y & (e_3)'_z
 \end{bmatrix}
 $$
 
