@@ -42,7 +42,7 @@ $$
 
 According to Cauchy's stress theorem, if the stress tensor field at a point is known, its stress vector in a plane defined by normal vector {n} can be calculated with the projection of tensor field on the plane.
 
-![blog_post_images](/post_imgs/post1_img3.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+![blog_post_images](/post_imgs/post1_img2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 *Ref: Khennane A., Introduction to Finite Element Analysis Using Matlab and Abaqus*{: .right}<br> 
 
@@ -326,7 +326,7 @@ $$
 
 This indicates that a material can carry nearly half the shear load compared to the tension load before yielding. A comparison of material tests using different yield criteria is shown in the graph below.
 
-![blog_post_images](/post_imgs/post1_img36.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+![blog_post_images](/post_imgs/post1_img3.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 *Ref: Dowling, N.E., Mechanical Behavior of Materials*{: .right}<br> 
 
 Example Calculations
@@ -362,7 +362,7 @@ Von_Miss_Stress=sqrt(3*J2)
 
 The output of the code would be:
 
-![blog_post_images](/post_imgs/post1_img38.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+![blog_post_images](/post_imgs/post1_img4.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 
 
