@@ -32,7 +32,8 @@ $$
 $$
 
 <details>
-  <summary><b>Code: Principal Stress Directions</b></summary><br>
+
+  <summary><b>Code: Principal Stress Directions</b></summary>
 <pre><code>
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
