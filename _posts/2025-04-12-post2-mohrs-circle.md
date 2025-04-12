@@ -31,6 +31,8 @@ $$
 \end{bmatrix}
 $$
 
+<details>
+  <summary>Principal Stress Directions</summary>
 ```Matlab
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
@@ -79,6 +81,7 @@ text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
     'P3','FontSize',14,'color', 'm','FontWeight', 'bold')
 %--------------------------------------------------------------------------
 ```
+</details>
 
 The traction vector acting on a plane defined by the normal vector {n} can be calculated as follows:
 
@@ -106,6 +109,8 @@ $$
 \tau_{\text{max}} = \frac{|\sigma_1 - \sigma_3|}{2}
 $$
 
+<details>
+  <summary>Plot Mohr's Circle</summary>
 ```Matlab
 %plot mohrs circle---------------------------------------------------------
 p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
@@ -139,12 +144,15 @@ text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
     'S_s','FontSize',14)
 %--------------------------------------------------------------------------
 ```
+<details>
 
 
 ![blog_post_images](/post_imgs/post2_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
 The following code can be used to enhance the visualization of the stress tensor and the cross-sectional plane.
 
+<details>
+  <summary>Plot Unit Cube and Cross Section Plane</summary>
 ```Matlab
 %draw a unit cube centered at coordinate origin----------------------------
 %this part of the code is only for visualization---------------------------
@@ -207,9 +215,12 @@ end
 surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 %--------------------------------------------------------------------------
 ```
+<details>
 
 The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
 
+<details>
+  <summary>Update Inputs</summary>
 ```Matlab
 %INPUTS....................................................................
 %S=[100 50 30; 50 150 40; 30 40 120];           %tensor in standard basis
@@ -217,6 +228,7 @@ S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
 n=[1 0 1]';
 %..........................................................................
 ```
+<details>
 
 $$
 [\sigma] = \begin{bmatrix} 
@@ -232,6 +244,8 @@ The resulting plot is shown below. Note that in this case, the principal directi
 
 You are encouraged to modify the normal direction inputs and re-run the code to observe how the normal and shear stresses vary. For example, if the traction vector is calculated along a unit direction such as {0.4718 ,0.7334, 0.4894} in the standard basis, the shear stress on the plane would be zero, and the traction vector {T} would be aligned with the surface normal.
 
+<details>
+  <summary>Update Inputs</summary>
 ```Matlab
 %INPUTS....................................................................
 S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
@@ -239,6 +253,7 @@ S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
 n=[0.4718 0.7334 0.4894]';
 %..........................................................................
 ```
+<details>
 
 The output of the code would be:
 
