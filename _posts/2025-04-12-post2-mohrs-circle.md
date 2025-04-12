@@ -32,7 +32,7 @@ $$
 $$
 
 <details>
-  <summary>Principal Stress Directions</summary>
+  <summary><b>Code: Principal Stress Directions</b></summary>
 ```Matlab
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
@@ -110,7 +110,7 @@ $$
 $$
 
 <details>
-  <summary>Plot Mohr's Circle</summary>
+  <summary><b>Code: Plot Mohr's Circle</b></summary>
 ```Matlab
 %plot mohrs circle---------------------------------------------------------
 p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
@@ -152,7 +152,7 @@ text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
 The following code can be used to enhance the visualization of the stress tensor and the cross-sectional plane.
 
 <details>
-  <summary>Plot Unit Cube and Cross Section Plane</summary>
+  <summary><b>Code: Plot Unit Cube and Cross Section Plane</b></summary>
 ```Matlab
 %draw a unit cube centered at coordinate origin----------------------------
 %this part of the code is only for visualization---------------------------
@@ -220,7 +220,7 @@ surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
 
 <details>
-  <summary>Update Inputs</summary>
+  <summary><b>Code: Update Inputs</b></summary>
 ```Matlab
 %INPUTS....................................................................
 %S=[100 50 30; 50 150 40; 30 40 120];           %tensor in standard basis
@@ -245,7 +245,7 @@ The resulting plot is shown below. Note that in this case, the principal directi
 You are encouraged to modify the normal direction inputs and re-run the code to observe how the normal and shear stresses vary. For example, if the traction vector is calculated along a unit direction such as {0.4718 ,0.7334, 0.4894} in the standard basis, the shear stress on the plane would be zero, and the traction vector {T} would be aligned with the surface normal.
 
 <details>
-  <summary>Update Inputs</summary>
+  <summary><b>Code: Update Inputs</b></summary>
 ```Matlab
 %INPUTS....................................................................
 S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
