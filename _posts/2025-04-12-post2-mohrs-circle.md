@@ -19,9 +19,9 @@ The MATLAB/Octave code provided below can be followed step by step to perform th
 
 Consider the following stress tensor:
 
-$
+$$
 [\sigma] = \begin{bmatrix} 100 & 50 & 30 \\ 50 & 150 & 40 \\ 30 & 40 & 120 \end{bmatrix}
-$
+$$
 
 <pre><code>
 %INPUTS....................................................................
@@ -74,21 +74,21 @@ text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
 
 The traction vector acting on a plane defined by the normal vector {n} can be calculated as follows:
 
-$
+$$
 \mathbf{T} = [\sigma]^T \mathbf{n} = [\sigma] \mathbf{n}
-$
+$$
 
 The matrix \[V\] contains the eigenvectors as its columns, while \[Λ\] is a diagonal matrix composed of the corresponding eigenvalues. The eigenvectors define the principal directions, and the eigenvalues represent the principal stresses.
 
-$
+$$
 [V] = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} , \quad [\Lambda] = \begin{bmatrix} \sigma_1 & 0 & 0 \\ 0 & \sigma_2 & 0 \\ 0 & 0 & \sigma_3 \end{bmatrix}
-$
+$$
 
 Construct the Mohr’s circle based on the calculated principal stresses. According to the diagram, the maximum shear stress is predicted to be 70.2 MPa. This value can also be computed using the following equation:
 
-$
+$$
 \tau_{\text{max}} = \frac{|\sigma_1 - \sigma_3|}{2}
-$
+$$
 
 <pre><code>
 %plot mohrs circle---------------------------------------------------------
@@ -201,9 +201,9 @@ n=[1 0 1]';
 %..........................................................................
 </code></pre>
 
-$
+$$
 [\sigma] = \begin{bmatrix} 208.8 & 0 & 0 \\ 0 & 92.7 & 0 \\ 0 & 0 & 68.4 \end{bmatrix}
-$
+$$
 
 The resulting plot is shown below. Note that in this case, the principal directions are aligned with the coordinate axes, as the stress tensor has been transformed into the eigenbasis.
 
