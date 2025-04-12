@@ -102,7 +102,7 @@ $$
 $$
 
 <details>
-  <summary><b>Code: Update Inputs</b></summary>
+  <summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
 <pre><code>
 clc
 clear all
