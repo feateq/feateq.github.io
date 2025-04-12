@@ -144,7 +144,7 @@ text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
     'S_s','FontSize',14)
 %--------------------------------------------------------------------------
 ```
-<details>
+</details>
 
 
 ![blog_post_images](/post_imgs/post2_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
@@ -215,7 +215,7 @@ end
 surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 %--------------------------------------------------------------------------
 ```
-<details>
+</details>
 
 The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
 
@@ -228,7 +228,7 @@ S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
 n=[1 0 1]';
 %..........................................................................
 ```
-<details>
+</details>
 
 $$
 [\sigma] = \begin{bmatrix} 
@@ -253,7 +253,7 @@ S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
 n=[0.4718 0.7334 0.4894]';
 %..........................................................................
 ```
-<details>
+</details>
 
 The output of the code would be:
 
