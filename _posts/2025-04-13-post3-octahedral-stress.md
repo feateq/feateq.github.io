@@ -104,8 +104,7 @@ $$
 <details>
   <summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
 <pre><code>
-clc
-clear all
+
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
 % stress tensor. It calculates the normal and shear stresses on a plane.
@@ -266,6 +265,5 @@ surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 <br>
 
 The output of the code is provided below. It is important to note that the shear stresses are calculated using vector rotation and stress invariants, with both methods yielding identical results, as expected. You are encouraged to modify the normal direction to other octahedral planes, such as (1, -1, 1), and observe that the normal and shear stresses remain the same across all octahedral planes.
-
 
 ![blog_post_images](/post_imgs/post3_img2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
