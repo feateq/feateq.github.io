@@ -1,11 +1,11 @@
 ---
 layout: page-fullwidth
-title:  "Mohr's Circle"
-subheadline:  "Maximum Shear Stress"
-teaser: "Mohr’s circle provides a two-dimensional graphical representation of the transformation laws for the Cauchy stress tensor. It allows the graphical determination of the stress components acting on a rotated plane passing through the same point."
-description: "solid mechanics, stress tensor, coordinate transformation, principal stress, mohr's circle"
+title:  "Octahedral Stress"
+subheadline:  "Octahedral Shear Stress Yield Criterion"
+teaser: "The cross-sectional plane with equal distance to all principal axes from the origin is referred to as the octahedral plane. There are eight octahedral planes, and the normal and shear stresses acting on all these planes are identical. The shear stress acting on this plane is responsible of the material’s yielding."
+description: "solid mechanics, stress tensor, octahedral stress, von misses stress"
 image:
-    thumb:  post2_thumb.png
+    thumb:  post3_thumb.jpg
 tags:
     - mechanics
 ---
@@ -14,13 +14,52 @@ tags:
 	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-In our previous post about [Stress Tensor]( https://www.feateq.com/post1-stress-tensor/), it was demonstrated that when the stress field is represented using a tensor, the normal and shear stresses on any plane—defined by a normal vector—can be determined. It was also shown that there exist specific directions in which stress becomes purely normal (tensile or compressive); these are known as the principal stress directions. Additionally, it is possible to identify the planes on which the maximum shear stresses occur.
+A cross-sectional plane is shown in the figure relative to the principal axes. Normal stress σ and shear stress τ on this plane can be calculated by using the stress tensor and normal vector. The direction of the normal to the cross-sectional plane is characterized by the angles α, β, and γ relative to the principal axes.
 
-Mohr’s circle provides a two-dimensional graphical representation of the transformation laws for the Cauchy stress tensor. It allows the graphical determination of the stress components acting on a rotated plane passing through the same point. The mathematical derivation of Mohr’s circle and the equations involved are beyond the scope of this post and will not be discussed in detail here.
+![blog_post_images](/post_imgs/post3_img1.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+*Ref: Dowling, N.E., Mechanical Behavior of Materials*{: .right}<br> 
 
-Mohr’s circle consists of three individual circles, each corresponding to a rotation about one of the principal directions. A key result from this representation is that the maximum shear stress occurs on planes oriented at 45 degrees to the principal stress planes.
+$$
+\mathbf{T} = [\sigma] \mathbf{n}
+$$
 
-The MATLAB/Octave code provided below can be followed step by step to perform the necessary calculations. The code visualizes the normal and traction vectors, the coordinate axes of both the standard and principal bases, a unit tensor cube, and the cross-sectional plane.
+The cross-sectional plane with equal distance to all principal axes from the origin is referred to as the octahedral plane.  The normal stress acting on this plane corresponds to the hydrostatic component of the stress tensor.
+
+$$
+\sigma_{\text{oct}} = \frac{\sigma_1 + \sigma_2 + \sigma_3}{3}
+$$
+
+The shear stress acting on this plane is responsible of the material’s yielding.
+
+$$
+\tau_{\text{oct}} = \frac{1}{3} \sqrt{(\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_1 - \sigma_3)^2}
+$$
+
+There are eight octahedral planes, and the normal and shear stresses acting on all these planes are identical. The octahedral normal and shear stresses can also be calculated by using stress invariants.
+
+$$
+\sigma_{\text{oct}} = \frac{I_1}{3}
+$$
+
+$$
+\tau_{\text{oct}} = \sqrt{\frac{2}{3} J_2}
+$$
+
+These quantities can be computed directly from stress components, without the need for principal stress calculations.
+
+$$
+\sigma_{\text{oct}} = \frac{\sigma_{11} + \sigma_{22} + \sigma_{33}}{3}
+$$
+
+$$
+\tau_{\text{oct}} = \frac{1}{3} \sqrt{(\sigma_{11} - \sigma_{22})^2 + (\sigma_{22} - \sigma_{33})^2 + (\sigma_{11} - \sigma_{33})^2 + 6(\sigma_{12}^2 + \sigma_{23}^2 + \sigma_{13}^2)}
+$$
+
+Material yielding occurs when the octahedral shear stress reaches a critical value. This condition is equivalent to the Von Mises Yield Criterion, as this threshold corresponds to the octahedral shear stress of a uniaxial tension specimen at the yielding point. The advantage of octahedral shear stress over Von Mises stress is that it is defined in a specific direction, whereas Von Mises stress is a scalar quantity. This directional definition is useful when assessing the stress and plasticity of a body in a particular critical direction under a complex load history.
+
+$$
+\tau_{\text{oct}} > \sqrt{\frac{2}{3}} \sigma_{\text{yield}}
+$$
 
 Consider the following stress tensor:
 
@@ -32,17 +71,48 @@ $$
 \end{bmatrix}
 $$
 
+The principal stresses can be determined by solving the eigenvalue problem of the stress tensor:
+
+$$
+\mathbf{T} = [\sigma] \mathbf{n} = \lambda \mathbf{n}
+$$
+
+The matrix \[V\] contains the eigenvectors as its columns, while \[Λ\] is a diagonal matrix composed of the corresponding eigenvalues. The eigenvectors define the principal directions, and the eigenvalues represent the principal stresses.
+
+$$
+[V] = \begin{bmatrix} 
+v_1 \\ 
+v_2 \\ 
+v_3 
+\end{bmatrix} , \quad [\Lambda] = \begin{bmatrix} 
+\sigma_1 & 0 & 0 \\ 
+0 & \sigma_2 & 0 \\ 
+0 & 0 & \sigma_3 
+\end{bmatrix}
+$$
+
+The stresses acting on octahedral planes result can be obtained by calculating the shear and normal stresses in the eigenbasis, in the direction {1,1,1}.
+
+$$
+[\sigma] = \begin{bmatrix} 
+208.8 & 0 & 0 \\ 
+0 & 92.7 & 0 \\ 
+0 & 0 & 68.4 
+\end{bmatrix}
+$$
+
 <details>
-  <summary><b>Code: Principal Stress Directions</b></summary>
+  <summary><b>Code: Update Inputs</b></summary>
 <pre><code>
+clc
+clear all
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
 % stress tensor. It calculates the normal and shear stresses on a plane.
 %..........................................................................
 %INPUTS....................................................................
-S=[100 50 30; 50 150 40; 30 40 120];           %tensor in standard basis
-%S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];  %tensor in principal basis
-n=[1 0 0]';
+S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
+n=[1 1 1]';
 %..........................................................................
 %..........................................................................
 %#ok<*NOPTS>
@@ -81,45 +151,7 @@ text(1.2*V(1,2),1.2*V(2,2),1.2*V(3,2),...
 text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
     'P3','FontSize',14,'color', 'm','FontWeight', 'bold')
 %--------------------------------------------------------------------------
-</code></pre>
-</details>
-<br>
 
-The traction vector acting on a plane defined by the normal vector {n} can be calculated as follows:
-
-$$
-\mathbf{T} = [\sigma]^T \mathbf{n} = [\sigma] \mathbf{n}
-$$
-
-The principal stresses can be determined by solving the eigenvalue problem of the stress tensor:
-
-$$
-\mathbf{T} = [\sigma] \mathbf{n} = \lambda \mathbf{n}
-$$
-
-The matrix \[V\] contains the eigenvectors as its columns, while \[Λ\] is a diagonal matrix composed of the corresponding eigenvalues. The eigenvectors define the principal directions, and the eigenvalues represent the principal stresses.
-
-$$
-[V] = \begin{bmatrix} 
-v_1 \\ 
-v_2 \\ 
-v_3 
-\end{bmatrix} , \quad [\Lambda] = \begin{bmatrix} 
-\sigma_1 & 0 & 0 \\ 
-0 & \sigma_2 & 0 \\ 
-0 & 0 & \sigma_3 
-\end{bmatrix}
-$$
-
-Construct the Mohr’s circle based on the calculated principal stresses. According to the diagram, the maximum shear stress is predicted to be 70.2 MPa. This value can also be computed using the following equation:
-
-$$
-\tau_{\text{max}} = \frac{|\sigma_1 - \sigma_3|}{2}
-$$
-
-<details>
-  <summary><b>Code: Plot Mohr's Circle</b></summary>
-<pre><code>
 %plot mohrs circle---------------------------------------------------------
 p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
     0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(2,2)));
@@ -151,17 +183,24 @@ plot([Prin_Stress(3,3) Prin_Stress(3,3)],[-0.55*abs(Prin_Stress(1,1)-...
 text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
     'S_s','FontSize',14)
 %--------------------------------------------------------------------------
-</code></pre>
-</details>
-<br>
 
-![blog_post_images](/post_imgs/post2_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
+%calculate I1--------------------------------------------------------------
+I1=sum(diag(L))
+%--------------------------------------------------------------------------
 
-The following code can be used to enhance the visualization of the stress tensor and the cross-sectional plane.
+%Calculate J2--------------------------------------------------------------
+J2=1/6*((L(1,1)-L(2,2))^2+(L(2,2)-L(3,3))^2+(L(1,1)-L(3,3))^2)
+%--------------------------------------------------------------------------
 
-<details>
-  <summary><b>Code: Plot Unit Cube and Cross Section Plane</b></summary>
-<pre><code>
+%Calculate Von Misses Stress-----------------------------------------------
+S_Von_Miss=sqrt(3*J2)
+%--------------------------------------------------------------------------
+
+%Calculate Octahedral Stress-----------------------------------------------
+S_oct_norm=I1/3
+S_oct_shear=sqrt(2/3*J2)
+%--------------------------------------------------------------------------
+
 %draw a unit cube centered at coordinate origin----------------------------
 %this part of the code is only for visualization---------------------------
 cube_corners= [...
@@ -226,50 +265,7 @@ surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 </details>
 <br>
 
-The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
-
-<details>
-  <summary><b>Code: Update Inputs</b></summary>
-<pre><code>
-%INPUTS....................................................................
-%S=[100 50 30; 50 150 40; 30 40 120];           %tensor in standard basis
-S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
-n=[1 0 1]';
-%..........................................................................
-</code></pre>
-</details>
-<br>
-
-$$
-[\sigma] = \begin{bmatrix} 
-208.8 & 0 & 0 \\ 
-0 & 92.7 & 0 \\ 
-0 & 0 & 68.4 
-\end{bmatrix}
-$$
-
-The resulting plot is shown below. Note that in this case, the principal directions are aligned with the coordinate axes, as the stress tensor has been transformed into the eigenbasis.
-
-![blog_post_images](/post_imgs/post2_img2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-
-You are encouraged to modify the normal direction inputs and re-run the code to observe how the normal and shear stresses vary. For example, if the traction vector is calculated along a unit direction such as {0.4718 ,0.7334, 0.4894} in the standard basis, the shear stress on the plane would be zero, and the traction vector {T} would be aligned with the surface normal.
-
-<details>
-  <summary><b>Code: Update Inputs</b></summary>
-<pre><code>
-%INPUTS....................................................................
-S=[100 50 30; 50 150 40; 30 40 120];             %tensor in standard basis
-%S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
-n=[0.4718 0.7334 0.4894]';
-%..........................................................................
-</code></pre>
-</details>
-<br>
-
-The output of the code would be:
-
-![blog_post_images](/post_imgs/post2_img3.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+The output of the code is provided below. It is important to note that the shear stresses are calculated using vector rotation and stress invariants, with both methods yielding identical results, as expected. You are encouraged to modify the normal direction to other octahedral planes, such as (1, -1, 1), and observe that the normal and shear stresses remain the same across all octahedral planes.
 
 
-
-
+![blog_post_images](/post_imgs/post3_img2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
