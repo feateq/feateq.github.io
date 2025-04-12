@@ -10,7 +10,7 @@ tags:
 ---
 <!-- MathJax -->
 <script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	src="MathJax.js">
 </script>
 
 In our previous post about [Stress Tensor]( https://www.feateq.com/post1-stress-tensor/), it was demonstrated that when the stress field is represented using a tensor, the normal and shear stresses on any plane—defined by a normal vector—can be determined. It was also shown that there exist specific directions in which stress becomes purely normal (tensile or compressive); these are known as the principal stress directions. Additionally, it is possible to identify the planes on which the maximum shear stresses occur.
