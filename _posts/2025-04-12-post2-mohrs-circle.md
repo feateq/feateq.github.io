@@ -32,8 +32,7 @@ $$
 $$
 
 <details>
-
-  <summary><b>Code: Principal Stress Directions</b></summary>
+  <summary><b>Code: Principal Stress Directions</summary>
 <pre><code>
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
@@ -83,6 +82,7 @@ text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
 %--------------------------------------------------------------------------
 </code></pre>
 </details>
+</b>
 
 The traction vector acting on a plane defined by the normal vector {n} can be calculated as follows:
 
@@ -146,7 +146,7 @@ text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
 %--------------------------------------------------------------------------
 </code></pre>
 </details>
-
+</b>
 
 ![blog_post_images](/post_imgs/post2_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -217,6 +217,7 @@ surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 %--------------------------------------------------------------------------
 </code></pre>
 </details>
+</b>
 
 The same result can be obtained by calculating the shear and normal stresses in the eigenbasis, specifically along a direction 45 degrees from the second principal direction, defined as {1,0,1}. 
 
@@ -230,6 +231,7 @@ n=[1 0 1]';
 %..........................................................................
 </code></pre>
 </details>
+</b>
 
 $$
 [\sigma] = \begin{bmatrix} 
@@ -255,6 +257,7 @@ n=[0.4718 0.7334 0.4894]';
 %..........................................................................
 </code></pre>
 </details>
+</b>
 
 The output of the code would be:
 
