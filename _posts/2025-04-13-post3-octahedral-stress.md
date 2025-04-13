@@ -102,165 +102,165 @@ $$
 $$
 
 <details>
-	<summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
-	```Matlab
+  <summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
+<pre><code>
 
-	%INPUTS....................................................................
-	% This code visualizes the traction vector and principal directions of a 
-	% stress tensor. It calculates the normal and shear stresses on a plane.
-	%..........................................................................
-	%INPUTS....................................................................
-	S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
-	n=[1 1 1]';
-	%..........................................................................
-	%..........................................................................
-	%#ok<*NOPTS>
+%INPUTS....................................................................
+% This code visualizes the traction vector and principal directions of a 
+% stress tensor. It calculates the normal and shear stresses on a plane.
+%..........................................................................
+%INPUTS....................................................................
+S=[208.8557 0 0; 0 92.7286  0; 0 0 68.4157];    %tensor in principal basis
+n=[1 1 1]';
+%..........................................................................
+%..........................................................................
+%#ok<*NOPTS>
 
-	%calculate traction vector-------------------------------------------------
-	n=n/norm(n); %convert the normal vector to unit vector
-	T=S*n;
-	f1=figure;
-	figure(f1)
-	plot3([0 T(1,1)/norm(T)],[0 T(2,1)/norm(T)],[0 T(3,1)/norm(T)],...
-		"k","LineWidth",2)
-	hold on
-	text(1.15*T(1,1)/norm(T),1.15*T(2,1)/norm(T),1.15*T(3,1)/norm(T),...
-		'T','FontSize',14,'color', 'k','FontWeight', 'bold')
-	%--------------------------------------------------------------------------
+%calculate traction vector-------------------------------------------------
+n=n/norm(n); %convert the normal vector to unit vector
+T=S*n;
+f1=figure;
+figure(f1)
+plot3([0 T(1,1)/norm(T)],[0 T(2,1)/norm(T)],[0 T(3,1)/norm(T)],...
+    "k","LineWidth",2)
+hold on
+text(1.15*T(1,1)/norm(T),1.15*T(2,1)/norm(T),1.15*T(3,1)/norm(T),...
+    'T','FontSize',14,'color', 'k','FontWeight', 'bold')
+%--------------------------------------------------------------------------
 
-	%calculate normal ans shear stress on the plane----------------------------
-	S_normal=T'*n
-	S_shear=sqrt(norm(T)^2-S_normal^2)
-	%--------------------------------------------------------------------------
+%calculate normal ans shear stress on the plane----------------------------
+S_normal=T'*n
+S_shear=sqrt(norm(T)^2-S_normal^2)
+%--------------------------------------------------------------------------
 
-	%calculate and plot principal directions-----------------------------------
-	[V,L]=eig(S);%calculate principal stresses and directions
-	B=diag(L);
-	[C,I] = sort(B,'descend');%sort eigenvalues
-	Prin_Stress=diag(C)
-	Prin_Direct=V(:,I)
-	V=Prin_Direct;
-	plot3([0 V(1,1)],[0 V(2,1)],[0 V(3,1)],"--m","LineWidth",2)
-	plot3([0 V(1,2)],[0 V(2,2)],[0 V(3,2)],"--m","LineWidth",2)
-	plot3([0 V(1,3)],[0 V(2,3)],[0 V(3,3)],"--m","LineWidth",2)
-	text(1.2*V(1,1),1.2*V(2,1),1.2*V(3,1),...
-		'P1','FontSize',14,'color', 'm','FontWeight', 'bold')
-	text(1.2*V(1,2),1.2*V(2,2),1.2*V(3,2),...
-		'P5','FontSize',14,'color', 'm','FontWeight', 'bold')
-	text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
-		'P3','FontSize',14,'color', 'm','FontWeight', 'bold')
-	%--------------------------------------------------------------------------
+%calculate and plot principal directions-----------------------------------
+[V,L]=eig(S);%calculate principal stresses and directions
+B=diag(L);
+[C,I] = sort(B,'descend');%sort eigenvalues
+Prin_Stress=diag(C)
+Prin_Direct=V(:,I)
+V=Prin_Direct;
+plot3([0 V(1,1)],[0 V(2,1)],[0 V(3,1)],"--m","LineWidth",2)
+plot3([0 V(1,2)],[0 V(2,2)],[0 V(3,2)],"--m","LineWidth",2)
+plot3([0 V(1,3)],[0 V(2,3)],[0 V(3,3)],"--m","LineWidth",2)
+text(1.2*V(1,1),1.2*V(2,1),1.2*V(3,1),...
+    'P1','FontSize',14,'color', 'm','FontWeight', 'bold')
+text(1.2*V(1,2),1.2*V(2,2),1.2*V(3,2),...
+    'P5','FontSize',14,'color', 'm','FontWeight', 'bold')
+text(1.2*V(1,3),1.2*V(2,3),1.2*V(3,3),...
+    'P3','FontSize',14,'color', 'm','FontWeight', 'bold')
+%--------------------------------------------------------------------------
 
-	%plot mohrs circle---------------------------------------------------------
-	p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
-		0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(2,2)));
-	p13 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(3,3))...
-		0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(3,3)));
-	p23 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(2,2)+Prin_Stress(3,3))...
-		0], 'Radius', 0.5*abs(Prin_Stress(2,2)-Prin_Stress(3,3)));
-	f2=figure;
-	figure(f2)
-	plot(p12, 'FaceColor', 'r')
-	hold on
-	plot(p13, 'FaceColor', 'g')
-	plot(p23, 'FaceColor', 'b')
-	grid on
-	text(Prin_Stress(1,1),0,['P1:' newline num2str(round(Prin_Stress(1,1),1))],...
-	'FontSize',14,'color','m','FontWeight','bold')
-	text(Prin_Stress(2,2),0,['P2:' newline num2str(round(Prin_Stress(2,2),1))],...
-	'FontSize',14,'color','m','FontWeight','bold')
-	text(Prin_Stress(3,3),0,['P3:' newline num2str(round(Prin_Stress(3,3),1))],...
-	'FontSize',14,'color','m','FontWeight','bold')
-	text(0.5*(Prin_Stress(2,2)+Prin_Stress(3,3)),0.5*abs(Prin_Stress(1,1)-...
-		Prin_Stress(3,3)),['Max Shear:' num2str(round(0.5*abs(Prin_Stress(1,1)-...
-		Prin_Stress(3,3)),1))],'FontSize',14,'color','m','FontWeight','bold')
-	axis equal
-	plot([Prin_Stress(3,3) 1.1*Prin_Stress(1,1)],[0 0],'k')
-	text(1.12*Prin_Stress(1,1),0,'S_n','FontSize',14)
-	plot([Prin_Stress(3,3) Prin_Stress(3,3)],[-0.55*abs(Prin_Stress(1,1)-...
-		Prin_Stress(3,3)) 0.55*abs(Prin_Stress(1,1)-Prin_Stress(3,3))],'k')
-	text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
-		'S_s','FontSize',14)
-	%--------------------------------------------------------------------------
+%plot mohrs circle---------------------------------------------------------
+p12 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(2,2))...
+    0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(2,2)));
+p13 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(1,1)+Prin_Stress(3,3))...
+    0], 'Radius', 0.5*abs(Prin_Stress(1,1)-Prin_Stress(3,3)));
+p23 = nsidedpoly(1000,'Center',[0.5*(Prin_Stress(2,2)+Prin_Stress(3,3))...
+    0], 'Radius', 0.5*abs(Prin_Stress(2,2)-Prin_Stress(3,3)));
+f2=figure;
+figure(f2)
+plot(p12, 'FaceColor', 'r')
+hold on
+plot(p13, 'FaceColor', 'g')
+plot(p23, 'FaceColor', 'b')
+grid on
+text(Prin_Stress(1,1),0,['P1:' newline num2str(round(Prin_Stress(1,1),1))],...
+'FontSize',14,'color','m','FontWeight','bold')
+text(Prin_Stress(2,2),0,['P2:' newline num2str(round(Prin_Stress(2,2),1))],...
+'FontSize',14,'color','m','FontWeight','bold')
+text(Prin_Stress(3,3),0,['P3:' newline num2str(round(Prin_Stress(3,3),1))],...
+'FontSize',14,'color','m','FontWeight','bold')
+text(0.5*(Prin_Stress(2,2)+Prin_Stress(3,3)),0.5*abs(Prin_Stress(1,1)-...
+    Prin_Stress(3,3)),['Max Shear:' num2str(round(0.5*abs(Prin_Stress(1,1)-...
+    Prin_Stress(3,3)),1))],'FontSize',14,'color','m','FontWeight','bold')
+axis equal
+plot([Prin_Stress(3,3) 1.1*Prin_Stress(1,1)],[0 0],'k')
+text(1.12*Prin_Stress(1,1),0,'S_n','FontSize',14)
+plot([Prin_Stress(3,3) Prin_Stress(3,3)],[-0.55*abs(Prin_Stress(1,1)-...
+    Prin_Stress(3,3)) 0.55*abs(Prin_Stress(1,1)-Prin_Stress(3,3))],'k')
+text(Prin_Stress(3,3),0.57*abs(Prin_Stress(1,1)-Prin_Stress(3,3)),...
+    'S_s','FontSize',14)
+%--------------------------------------------------------------------------
 
-	%calculate I1--------------------------------------------------------------
-	I1=sum(diag(L))
-	%--------------------------------------------------------------------------
+%calculate I1--------------------------------------------------------------
+I1=sum(diag(L))
+%--------------------------------------------------------------------------
 
-	%Calculate J2--------------------------------------------------------------
-	J2=1/6*((L(1,1)-L(2,2))^2+(L(2,2)-L(3,3))^2+(L(1,1)-L(3,3))^2)
-	%--------------------------------------------------------------------------
+%Calculate J2--------------------------------------------------------------
+J2=1/6*((L(1,1)-L(2,2))^2+(L(2,2)-L(3,3))^2+(L(1,1)-L(3,3))^2)
+%--------------------------------------------------------------------------
 
-	%Calculate Von Misses Stress-----------------------------------------------
-	S_Von_Miss=sqrt(3*J2)
-	%--------------------------------------------------------------------------
+%Calculate Von Misses Stress-----------------------------------------------
+S_Von_Miss=sqrt(3*J2)
+%--------------------------------------------------------------------------
 
-	%Calculate Octahedral Stress-----------------------------------------------
-	S_oct_norm=I1/3
-	S_oct_shear=sqrt(2/3*J2)
-	%--------------------------------------------------------------------------
+%Calculate Octahedral Stress-----------------------------------------------
+S_oct_norm=I1/3
+S_oct_shear=sqrt(2/3*J2)
+%--------------------------------------------------------------------------
 
-	%draw a unit cube centered at coordinate origin----------------------------
-	%this part of the code is only for visualization---------------------------
-	cube_corners= [...
-			 -0.5   -0.5    -0.5;
-			 0.5   -0.5     -0.5;
-			 0.5    0.5     -0.5;
-			 -0.5   0.5     -0.5;
-			 -0.5   -0.5     0.5;
-			 0.5   -0.5      0.5;
-			 0.5    0.5      0.5;
-			 -0.5   0.5      0.5];
-	xc = cube_corners(:,1); 
-	yc = cube_corners(:,2);
-	zc = cube_corners(:,3);
-	idx = [1 2 3 4 1; 5 6 7 8 5; 1 2 6 5 1; 4 3 7 8 4; 2 3 7 6 2;1 4 8 5 1]';
-	figure(f1)
-	patch(xc(idx),yc(idx),zc(idx),'r', 'facealpha', 0.1)
-	xlabel('X')
-	ylabel('Y')
-	zlabel('Z')
-	view(3)
-	grid on
-	axis equal
-	hold on
-	plot3([-1.15 1.15],[0 0],[0 0],"b","LineWidth",1.5)
-	plot3([0 0],[-1.15 1.15],[0 0],"b","LineWidth",1.5)
-	plot3([0 0],[0 0],[-1.15 1.15],"b","LineWidth",1.5)
-	txt = '\leftarrow sin(\pi) = 0';
-	text(1.25,0,0,'X','FontSize',14)
-	text(0,1.25,0,'Y','FontSize',14)
-	text(0,0,1.25,'Z','FontSize',14)
-	xlim([-2 2])
-	ylim([-2 2])
-	zlim([-2 2])
-	%--------------------------------------------------------------------------
+%draw a unit cube centered at coordinate origin----------------------------
+%this part of the code is only for visualization---------------------------
+cube_corners= [...
+         -0.5   -0.5    -0.5;
+         0.5   -0.5     -0.5;
+         0.5    0.5     -0.5;
+         -0.5   0.5     -0.5;
+         -0.5   -0.5     0.5;
+         0.5   -0.5      0.5;
+         0.5    0.5      0.5;
+         -0.5   0.5      0.5];
+xc = cube_corners(:,1); 
+yc = cube_corners(:,2);
+zc = cube_corners(:,3);
+idx = [1 2 3 4 1; 5 6 7 8 5; 1 2 6 5 1; 4 3 7 8 4; 2 3 7 6 2;1 4 8 5 1]';
+figure(f1)
+patch(xc(idx),yc(idx),zc(idx),'r', 'facealpha', 0.1)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+view(3)
+grid on
+axis equal
+hold on
+plot3([-1.15 1.15],[0 0],[0 0],"b","LineWidth",1.5)
+plot3([0 0],[-1.15 1.15],[0 0],"b","LineWidth",1.5)
+plot3([0 0],[0 0],[-1.15 1.15],"b","LineWidth",1.5)
+txt = '\leftarrow sin(\pi) = 0';
+text(1.25,0,0,'X','FontSize',14)
+text(0,1.25,0,'Y','FontSize',14)
+text(0,0,1.25,'Z','FontSize',14)
+xlim([-2 2])
+ylim([-2 2])
+zlim([-2 2])
+%--------------------------------------------------------------------------
 
-	%draw the unit normal of the cross section---------------------------------
-	plot3([0 n(1,1)],[0 n(2,1)],[0 n(3,1)],"-.r","LineWidth",3)
-	text(1.1*n(1,1),1.1*n(2,1),1.1*n(3,1),'n','FontSize',14,'color', 'r')
-	%--------------------------------------------------------------------------
+%draw the unit normal of the cross section---------------------------------
+plot3([0 n(1,1)],[0 n(2,1)],[0 n(3,1)],"-.r","LineWidth",3)
+text(1.1*n(1,1),1.1*n(2,1),1.1*n(3,1),'n','FontSize',14,'color', 'r')
+%--------------------------------------------------------------------------
 
-	%draw a plane normal to n and passing through origin (0,0,0)---------------
-	%a plane is a*x+b*y+c*z+d=0  >>>>[a,b,c] is the normal
-	if n(3,1)==0
-		if n(1,1)==0
-		   [xx,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
-			yy=0*xx;
-		elseif n(2,1)==0
-		   [yy,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
-			xx=0*yy;
-		else
-		   [yy,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
-			xx=(-n(2,1)/n(1,1))*yy;   
-		end
-	else
-		[xx,yy]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
-		zz=(-1/n(3,1))*(n(1,1)*xx+n(2,1)*yy);
-	end
-	surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
-	%--------------------------------------------------------------------------
-	```
+%draw a plane normal to n and passing through origin (0,0,0)---------------
+%a plane is a*x+b*y+c*z+d=0  >>>>[a,b,c] is the normal
+if n(3,1)==0
+    if n(1,1)==0
+       [xx,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
+        yy=0*xx;
+    elseif n(2,1)==0
+       [yy,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
+        xx=0*yy;
+    else
+       [yy,zz]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
+        xx=(-n(2,1)/n(1,1))*yy;   
+    end
+else
+    [xx,yy]=ndgrid(-0.75:0.5:0.75,-0.75:0.5:0.75);%create a grid
+    zz=(-1/n(3,1))*(n(1,1)*xx+n(2,1)*yy);
+end
+surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
+%--------------------------------------------------------------------------
+</code></pre>
 </details>
 <br>
 
