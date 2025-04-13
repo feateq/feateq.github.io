@@ -103,7 +103,7 @@ $$
 
 <details>
   <summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
-```json
+```
 
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
