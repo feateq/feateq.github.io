@@ -103,7 +103,7 @@ $$
 
 <details>
   <summary><b>Matlab/Octave Code for Octahedral Stress Calculations</b></summary>
-<pre><code>
+```json
 
 %INPUTS....................................................................
 % This code visualizes the traction vector and principal directions of a 
@@ -260,7 +260,7 @@ else
 end
 surf(xx,yy,zz,'FaceAlpha',0.5,'EdgeColor', 'none', 'FaceColor', 'g')
 %--------------------------------------------------------------------------
-</code></pre>
+```
 </details>
 <br>
 
