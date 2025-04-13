@@ -58,7 +58,7 @@ $$
 Material yielding occurs when the octahedral shear stress reaches a critical value. This condition is equivalent to the Von Mises Yield Criterion, as this threshold corresponds to the octahedral shear stress of a uniaxial tension specimen at the yielding point. The advantage of octahedral shear stress over Von Mises stress is that it is defined in a specific direction, whereas Von Mises stress is a scalar quantity. This directional definition is useful when assessing the stress and plasticity of a body in a particular critical direction under a complex load history.
 
 $$
-\tau_{\text{oct}} > \sqrt{\frac{2}{3}} \sigma_{\text{yield}}
+\tau_{\text{oct}} > \frac{\sqrt{2}{3}} \sigma_{\text{yield}}
 $$
 
 Consider the following stress tensor:
