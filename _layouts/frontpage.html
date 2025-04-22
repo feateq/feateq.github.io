@@ -45,7 +45,7 @@ format: frontpage
 {% capture url %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
 {% endif %}
 {% if page.callforaction %}
-    <div class="row t15 b5">
+    <div class="row t15">
         <div class="small-12 text-center columns">
             <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
         </div><!-- /.small-12.columns -->
@@ -65,7 +65,6 @@ format: frontpage
             <h2>{{ site.data.language.new_blog_entries }}</h2>
         </div><!-- /.small-12.columns -->
     </div><!-- /.row -->
-
 
     <div class="row">
         <div class="medium-6 columns">
