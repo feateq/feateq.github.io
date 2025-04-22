@@ -25,7 +25,7 @@ tags:
 
 ![blog_post_images](/post_imgs/post4_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 *Ref: Wikipedia, Von Misses Yield Criterion*{: .right}<br> 
-
+<br>
 $$
 \sigma_{\text{VM}} = \sqrt{\frac{1}{2} \left[ (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_1 - \sigma_3)^2 \right]}
 $$
@@ -62,7 +62,7 @@ $$
 3r^2 = (x - y)^2 + (y - z)^2 + (z - x)^2
 $$
 
-This is the equation of a cylinder with radius r around the vector ${1, 1, 1}$. Any cross-section of the cylinder, taken perpendicular to this axis, is a circle lying on the plane defined by  $x+y+z=3c$. Recall that the general equation of a plane in three-dimensional space, with a surface normal vector  $\mathbf{n} = { n_1, n_2, n_3 }$ is given by:
+This is the equation of a cylinder with radius r around the vector $\\{1, 1, 1\\}$. Any cross-section of the cylinder, taken perpendicular to this axis, is a circle lying on the plane defined by  $x+y+z=3c$. Recall that the general equation of a plane in three-dimensional space, with a surface normal vector  $\\mathbf{n} = { n_1, n_2, n_3 \\}$ is given by:
 
 $$
 n_1 (x - x_0) + n_2 (y - y_0) + n_3 (z - z_0) = 0
