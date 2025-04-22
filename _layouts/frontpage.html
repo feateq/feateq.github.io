@@ -68,7 +68,9 @@ format: frontpage
     <div class="row">
         <div class="small-12 columns">
 		    {% for post in site.posts limit:1 %}
-				<b><span style="text-transform:uppercase"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span></b>
+				<p>
+					<b><span style="text-transform:uppercase"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span></b>
+				</p>
 				<p>
 					{% if post.image.thumb %}<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img src="{{ site.urlimg }}{{ post.image.thumb }}" class="alignleft" width="300" height="300" alt="{{ page.title escape_once }}"></a>{% endif %}
 					{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
@@ -80,7 +82,9 @@ format: frontpage
 	
 	<div class="row t15">
         <div class="small-12 columns">
-            <p><strong>{{ site.data.language.more_articles }}</strong></p>
+            <p>
+				<strong>{{ site.data.language.more_articles }}</strong>
+			</p>
             {% include list-posts entries='3' offset='1' %}
         </div><!-- /.small-12 columns -->
     </div><!-- /.row -->
