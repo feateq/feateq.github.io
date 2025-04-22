@@ -5,6 +5,8 @@
 # this work, you have to use › layout: frontpage
 #
 layout: frontpage
+header:
+  image_fullwidth: front_cover.jpg
 widget1:
   title: "Mechanics"
   url: 'https://www.feateq.com/mechanics'
