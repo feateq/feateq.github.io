@@ -79,5 +79,5 @@ $$
 \left( \sqrt{\frac{2}{3}} \sigma_{\text{yield}} \right)^2 = s_1^2 + s_2^2 + s_3^2
 $$
 
-In deviatoric principal space, the yield surface transforms into a sphere with radius  \sqrt{\frac{2}{3}} \sigma_{\text{yield}}, centered at the origin. 
+\text{In deviatoric principal space, the yield surface transforms into a sphere with radius} $\sqrt{\frac{2}{3}} \sigma_{\text{yield}}$\text{, centered at the origin.} 
 
