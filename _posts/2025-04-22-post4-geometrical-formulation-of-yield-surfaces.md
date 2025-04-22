@@ -26,6 +26,7 @@ tags:
 ![blog_post_images](/post_imgs/post4_img1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 *Ref: Wikipedia, Von Misses Yield Criterion*{: .right}<br> 
 <br>
+
 $$
 \sigma_{\text{VM}} = \sqrt{\frac{1}{2} \left[ (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_1 - \sigma_3)^2 \right]}
 $$
