@@ -59,30 +59,23 @@ format: frontpage
 {% endcomment %}
 
 {% unless site.posts == empty %}
-    <div class="row t0 b0 homepage">
+    <div class="row">
         <div class="small-12 columns">
             <h2>{{ site.data.language.new_blog_entries }}</h2>
         </div><!-- /.small-12.columns -->
     </div><!-- /.row -->
 
     <div class="row">
-        <div class="medium-6 columns">
-            {% for post in site.posts limit:1 %}
-            <b><span style="text-transform:uppercase"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span></b>
-            <p>
-                {% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% else post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
-                <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a>
-            </p>
+        <div class="small-12 columns">
+		    {% for post in site.posts limit:1 %}
+				<b><span style="text-transform:uppercase"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span></b>
+				<p>
+					<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img width="970" src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ page.title | escape_once }}"></a>
+					{% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% else post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
+					<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a>
+				</p>
             {% endfor %}
-        </div><!-- /.medium-5.columns -->
-
-        <div class="medium-6 columns">
-            {% for post in site.posts limit:1 %}
-            <p>
-                <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img width="970" src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ page.title | escape_once }}"></a>
-            </p>
-            {% endfor %}
-        </div><!-- /.medium-5.columns -->			
+        </div><!-- /.small-12.columns -->			
     </div><!-- /.row -->
 	
 	<div class="row">
