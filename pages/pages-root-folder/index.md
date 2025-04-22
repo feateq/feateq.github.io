@@ -6,7 +6,7 @@
 #
 layout: frontpage
 header:
-  image_fullwidth: front_cover.jpg
+  image_fullwidth: 
 widget1:
   title: "Mechanics"
   url: 'https://www.feateq.com/mechanics'
